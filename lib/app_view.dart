@@ -12,14 +12,14 @@ class MyAppView extends StatelessWidget {
     return MaterialApp(
       title: 'Bloc Firebase app',
       theme: ThemeData(
-        colorScheme:  ColorScheme.light(
+        colorScheme:  const ColorScheme.light(
           background: Colors.white,
           onBackground: Colors.black,
-          primary: Colors.redAccent.shade200, //color.fromRGBD(206,147, 216,1),
+          primary: Color.fromRGBO(206,147, 216,1),
           onPrimary: Colors.black,
-          secondary: Colors.pink.shade700, //color.fromRGBD(244,143, 177 ,1)
+          secondary: Color.fromRGBO(244,143, 177 ,1),
           onSecondary: Colors.white,
-          tertiary: Colors.lime, //color.fromRGBD(255,204, 128,1),
+          tertiary: Color.fromRGBO(255,204, 128,1),
           error: Colors.red,
           outline: Color(0xFF424242),
         )

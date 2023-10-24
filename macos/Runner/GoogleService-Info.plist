@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDNEJCrruuUrPy5_JIwhN8FufqA7NMUvJQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>774960596419</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.loginBf.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>product-test-555c2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>product-test-555c2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:774960596419:ios:b7b49e79848a00e200e976</string>
+	<key>DATABASE_URL</key>
+	<string>https://product-test-555c2-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
