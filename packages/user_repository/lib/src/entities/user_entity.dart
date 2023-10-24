@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:equatable/equatable.dart';
 
 class MyUserEntity extends Equatable {
@@ -14,10 +16,10 @@ class MyUserEntity extends Equatable {
 
   MyUserEntity fromDocument(Map<String, dynamic> doc) {
     return MyUserEntity(
-        userId: doc[userId], email: doc[email], name: doc[name]);
+        userId: doc['id'], email: doc['email'], name: doc['username']);
   }
 
   @override
   // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [userId, name, email];
 }
