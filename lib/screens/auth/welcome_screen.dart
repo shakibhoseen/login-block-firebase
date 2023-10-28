@@ -1,6 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login_bf/blocs/authentication_bloc/authentication_bloc.dart';
+import 'package:login_bf/blocs/sign_in_bloc/sign_in_bloc.dart';
+import 'package:login_bf/blocs/sign_up_bloc/sign_up_bloc.dart';
+import 'package:login_bf/screens/auth/sign_in_screen.dart';
+import 'package:login_bf/screens/auth/sign_up_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -75,32 +81,53 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   child: Column(
                     children: <Widget>[
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 50),
+                        padding: const EdgeInsets.symmetric(horizontal: 50),
                         child: TabBar(
                           controller: tabController,
                           unselectedLabelColor: Theme.of(context)
                               .colorScheme
                               .onBackground
                               .withOpacity(0.5),
-                              labelColor: Theme.of(context).colorScheme.onBackground,
-                          tabs: [
+                          labelColor:
+                              Theme.of(context).colorScheme.onBackground,
+                          tabs: const [
                             Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: Text('Sign In', style: TextStyle(fontSize: 18),),
+                              padding: EdgeInsets.all(12.0),
+                              child: Text(
+                                'Sign In',
+                                style: TextStyle(fontSize: 18),
+                              ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: Text('Sign Up', style: TextStyle(fontSize: 18),),
+                              padding: EdgeInsets.all(12.0),
+                              child: Text(
+                                'Sign Up',
+                                style: TextStyle(fontSize: 18),
+                              ),
                             ),
                           ],
                         ),
                       ),
-                      Expanded(child: TabBarView(
+                      Expanded(
+                          child: TabBarView(
                         controller: tabController,
                         children: [
-                          Container(),
-                          Container(),
-                        ],))
+                          BlocProvider(
+                            create: (context) => SignInBloc(
+                                userRepository: context
+                                    .read<AuthenticationBloc>()
+                                    .userRepository),
+                            child: const SignInScreen(),
+                          ),
+                          BlocProvider(
+                            create: (context) => SignUpBloc(
+                                userRepository: context
+                                    .read<AuthenticationBloc>()
+                                    .userRepository),
+                            child: const SignUpScreen(),
+                          ),
+                        ],
+                      ))
                     ],
                   ),
                 ),
